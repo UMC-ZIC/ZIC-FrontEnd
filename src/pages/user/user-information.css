@@ -1,0 +1,225 @@
+/* 전체 컨테이너 */
+.user-information-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: none;
+}
+
+/* 진행 바 */
+.user-progress-bar-container {
+    width: 404px;
+    height: 2px;
+    position: relative;
+    border-radius: 1.5px;
+    background-color:#DCDCDC;
+    margin-bottom: 61px !important;
+}
+
+.user-progress-bar-fill {
+    width: 202px;
+    height: 5px;
+    position: absolute;
+    top: -1.4px;
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #278CFF;
+    animation: user-progress-animation 1s ease-in-out forwards; /* 애니메이션 추가 */
+}
+
+/* 애니메이션 키프레임 */
+@keyframes user-progress-animation {
+    from {
+        width: 202px; /* 시작 너비 */
+    }
+    to {
+        width: 436px; /* 끝 너비 */
+        clip-path: inset(0px 27px 0px 0px); /* 오른쪽 27px만 가리기 */
+    }
+}
+
+/*지역 섹션*/
+.region-section {
+    width: 100%;
+    max-width: 500px;
+}
+
+.region-section label {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    line-height: 16.9px;
+    letter-spacing: 2%;
+    color: #030303;
+    margin-left: 26px;
+}
+.region-section label.label-filled {
+    color: #C6C6C6;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 342px;
+    margin-left: 26px;
+    margin-bottom: 4px;
+    margin-top: 8px;
+    border: none;
+}
+
+.search-bar input {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 21px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    letter-spacing: 2%;
+    color: #030303; /*텍스트 색상*/
+}
+
+.search-bar input::placeholder {
+    color: #C6C6C6;
+}
+
+.search-bar::after {
+    content: "";
+    position: absolute;
+    margin-top: 32px;
+    width: 342px; /* 전체 너비 */
+    height: 1.5px; /* 밑줄 두께 */
+    border-radius: 1.5px;
+    background-color: #DCDCDC; /* 밑줄 색상 */
+}
+
+/*써치 버튼*/
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 74.77px;
+    margin-right: 6.56px;
+}
+
+.search-button img {
+    width: 14.21px;
+    height: 17.16px;
+    margin-bottom: -5px;
+}
+
+.viewBtn{
+    width : 342px;
+    overflow-x : auto;
+    margin-bottom: 20px;
+    margin-left: 26px;
+    -ms-overflow-style: none; /* IE 및 Edge에서 스크롤바 숨기기 */
+    scrollbar-width: none; /* Firefox에서 스크롤바 숨기기 */
+}
+
+.viewBtn::-webkit-scrollbar {
+    display: none; /* Chrome, Safari에서 스크롤바 숨기기 */
+}
+
+/* 지역 리스트 */
+.region-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 1250px;
+    height: 38px;
+    margin-top: 14px;
+    white-space: nowrap; /*줄바꿈 방지*/
+    -ms-overflow-style: none; /* IE, Edge 스크롤바 숨김 */
+    scrollbar-width: none; /* Firefox 스크롤바 숨김 */
+}
+
+.region-button {
+    width: 74px;
+    height: 38px;
+    background-color: #FFFFFF;
+    border: 1px solid #DCDCDC;
+    border-radius: 20px;
+    color: #7D7D7D;
+    font-size: 14px;
+    font-family: 'Pretendard-Regular';
+    line-height: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 0.9px;
+}
+
+.region-button:hover {
+    background-color: #278CFF;
+    border-color: #63ACFF;
+    color: #FFFFFF;
+}
+
+.region-button.selected {
+    background-color: #278CFF; /* 선택된 버튼 색상 */
+    color: #FFFFFF;
+    border-color: #63ACFF;
+}
+
+
+/*연주 가능 종목 섹션*/
+.instruments-section {
+    width: 100%;
+    max-width: 393px;
+    height: 295px;
+    margin-top: 46px;
+    margin-bottom: 205px;
+}
+
+/*지역 리스트가 표시될 때 여백 조정*/
+.instruments-section.region-list-visible {
+    margin-bottom: 148px;
+}
+
+.instruments-section label {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    letter-spacing: 2%;
+    color: #030303;
+    margin-left: 26px;
+}
+
+/* 선택된 악기가 있을 때 변경될 스타일 */
+.instruments-section .label-filled {
+    color: #C6C6C6;
+}
+
+.instruments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+    width: 340px;
+    height: 255px;
+    gap: 10px;
+    margin-top: 20px;
+    margin-left: 26px;
+}
+
+.instrument-button {
+    width: 165px;
+    height: 43px;
+    background-color: #F2F2F2;
+    text-align: center;
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    letter-spacing: 2%;
+    border: none;
+    color: #7D7D7D;
+    cursor: pointer;
+}
+
+.instrument-button.active {
+    background-color: #278CFF;
+    color: #ffffff;
+}

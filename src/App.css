@@ -1,42 +1,29 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import "../src/styles/reset.css";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.root-layout {
+    display: flex;
+    justify-content: center;
+    height: 100%; /* 부모 요소의 높이를 제한하지 않음 */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-wrap {
+    width: 393px;
+    height: auto;
+    min-height: 852px; /* 최소 높이만 설정 */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* 특정 페이지에만 적용되는 크기 */
+.content-wrap.owner-information {
+    height: 974px;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* 특정 페이지에만 적용되는 크기 */
+.content-wrap.practice-room {
+    min-height: 852px; /* 최소 높이만 설정 */
+    height: auto; /* 콘텐츠에 따라 높이가 늘어나도록 설정 */
 }

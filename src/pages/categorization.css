@@ -1,0 +1,113 @@
+/* 전체 컨테이너 */
+.categorization-container {
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    background-color: none;
+}
+
+/* 진행 바 */
+.progress-bar-container {
+    width: 404px;
+    height: 2px;
+    position: relative;
+    border-radius: 1.5px;
+    background-color:#DCDCDC;
+}
+.progress-bar-fill {
+    width: 0%;
+    height: 5px;
+    position: absolute;
+    top: -1.4px;
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #278CFF;
+    animation: progressAnimation 1s ease-in-out forwards;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0px; /* 시작 크기 */
+    }
+    to {
+        width: 202px; /* 목표 크기 */
+    }
+}
+
+/* 질문 텍스트 */
+.question {
+    align-items: flex-start;
+    margin-top: 142px;
+    margin-bottom: 46.26px;
+    margin-left: 30px;
+    font-family: 'Pretendard-Medium';
+    font-size: 20px;
+    line-height: 34.11px;
+    color: #030303;
+}
+
+/* 버튼 그룹 */
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 311px;
+    margin-top: 46.26px;
+}
+
+/* 카테고리 버튼 기본 스타일 */
+.category-button {
+    justify-content: center;
+    width: 160px;
+    height: 140px;
+    border: none;
+    border-radius: 30px;
+    background-color: #DCDCDC;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.category-button div {
+    margin-top: 43px;
+    margin-bottom: 40px;
+    margin-left: 44px;
+    margin-right: 44px;
+    width: 72px;
+    height: 57px;
+    color: #030303;
+    white-space: nowrap;
+}
+
+.category-button span {
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    color: #545454;
+    letter-spacing: 2%;
+}
+
+.category-button p {
+    width: 72px;
+    height: 33px;
+    font-family: 'Pretendard-Bold';
+    font-size: 26px;
+    letter-spacing: 2%;
+    margin-top: 6px;
+    margin-bottom: 40px;
+}
+
+/* 활성화된 버튼 스타일 */
+.category-button.active {
+    background-color: #0095FF; /* 파란색 */
+    color: #FFFFFF;
+}
+
+.category-button.active span {
+    color: #ffffff; /* 활성화 시 연습실 텍스트 색상 */
+}
+
+.category-button.active p {
+    color: #ffffff; /* 활성화 시 대여자/이용자 텍스트 색상 */
+}
+

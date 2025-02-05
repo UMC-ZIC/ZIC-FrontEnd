@@ -1,0 +1,257 @@
+/* 전체 컨테이너 */
+.content-wrap.owner-information {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: none;
+}
+
+/* 진행 바 */
+.owner-progress-bar-container {
+    width: 404px;
+    height: 2px;
+    position: relative;
+    border-radius: 1.5px;
+    background-color:#DCDCDC;
+    margin-bottom: 54px !important;
+}
+
+.owner-progress-bar-fill {
+    width: 100%;
+    height: 5px;
+    background-color: #278CFF;
+    margin-bottom: 54px;
+    animation: progress-animation 1s ease-in-out forwards; /* 애니메이션 추가 */
+}
+
+/* 애니메이션 키프레임 */
+@keyframes progress-animation {
+    from {
+        width: 202px; /* 시작 너비 */
+    }
+    to {
+        width: 404px; /* 끝 너비 */
+    }
+}
+
+/*상호명 섹션*/
+.label-section {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 45px;
+}
+
+.label-section label{
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    line-height: 16.9px;
+    letter-spacing: 2%;
+    color: #030303;
+    margin-left: 26px;
+}
+
+.label-section label.label-unfilled {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    color: #030303; /* 기본 색상 */
+}
+
+.label-section label.label-filled {
+    color: #C6C6C6; /* 입력값이 있을 때 변경 */
+}
+
+/*사업자 번호 섹션*/
+.business-number-section {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 45px;
+}
+
+.business-number-section label {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    line-height: 16.9px;
+    letter-spacing: 2%;
+    color: #030303;
+    margin-left: 26px;
+}
+
+.business-number-section label.label-filled {
+    color: #C6C6C6;
+}
+
+/*주소 섹션*/
+.address-section {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 71px;
+}
+
+.address-section label {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    line-height: 16.9px;
+    letter-spacing: 2%;
+    color: #030303;
+    margin-left: 26px;
+}
+
+.address-section label.label-filled {
+    color: #C6C6C6;
+}
+
+.input-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 342px;
+    margin-left: 26px;
+    margin-bottom: 4px;
+    margin-top: 13px;
+    border: none;
+}
+
+.input-bar input {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 21px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    line-height: 20.8px;
+    background-color: transparent; /*배경 투명*/
+    color: #030303; /*텍스트 색상*/
+}
+
+/* 입력 필드 placeholder 색상 조정 */
+.input-bar input::placeholder {
+    color: #C6C6C6;
+}
+
+.input-bar::after {
+    content: "";
+    position: absolute;
+    margin-top: 32px;
+    width: 342px; /* 전체 너비 */
+    height: 1.6px; /* 밑줄 두께 */
+    border-radius: 1.5px;
+    background-color: #DCDCDC; /* 밑줄 색상 */
+}
+
+.second-input-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 342px;
+    margin-left: 26px;
+    margin-top: 33px;
+    border: none;
+}
+
+.second-input-bar input {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    outline: none;
+    width: 240px;
+    height: 21px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    line-height: 20.8px;
+    letter-spacing: 2%;
+    background-color: transparent; /*배경 투명*/
+    color: #030303; /*텍스트 색상*/
+}
+
+/* 입력 필드 placeholder 색상 조정 */
+.second-input-bar input::placeholder {
+    color: #C6C6C6;
+}
+
+.second-input-bar::after {
+    content: "";
+    position: absolute;
+    margin-top: 32px;
+    width: 342px; /* 전체 너비 */
+    height: 1.6px; /* 밑줄 두께 */
+    border-radius: 1.5px;
+    background-color: #DCDCDC; /* 밑줄 색상 */
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 74.77px;
+    margin-right: 6.56px;
+}
+
+.search-button img {
+    width: 14.21px;
+    height: 17.16px;
+    margin-bottom: -4px;
+}
+
+/* 연주 가능 종목 섹션 */
+.owner-instruments-section {
+    width: 100%;
+    max-width: 393px;
+    height: 295px;
+    margin-bottom: 50px;
+}
+
+.owner-instruments-section label {
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    line-height: 16.9px;
+    letter-spacing: 2%;
+    color: #030303;
+    margin-left: 26px;
+}
+
+/* 선택된 악기가 있을 때 변경될 스타일 */
+.owner-instruments-section .label-filled {
+    color: #C6C6C6; /* 선택 시 색상 변경 */
+}
+
+.instruments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2열 그리드 */
+    width: 340px;
+    height: 255px;
+    gap: 10px; /*버튼 사이 간격*/
+    margin-top: 20px;
+    margin-left: 26px;
+}
+
+.instrument-button {
+    width: 165px;
+    height: 43px;
+    background-color: #F2F2F2;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 16.9px;
+    letter-spacing: 2%;
+    border: none;
+    color: #7D7D7D;
+    font-family: 'Pretendard-Regular';
+    cursor: pointer;
+}
+
+.instrument-button.active {
+    background-color: #278CFF; /*선택된 버튼 배경색*/
+    color: #ffffff; /*선택된 버튼 글자색*/
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 11px;
+    margin-left: 26px;
+}

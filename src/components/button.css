@@ -1,0 +1,20 @@
+/*버튼*/
+.button {
+    font-family: 'Pretendard-Bold';
+    color: white;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    width: 343px;
+    height: 54px;
+    margin-left: 25px;
+    background-color: #278CFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}

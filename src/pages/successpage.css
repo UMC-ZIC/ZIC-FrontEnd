@@ -1,0 +1,58 @@
+/*@import "/src/styles/fonts.css";*/
+
+
+/*전체 컨테이너*/
+.success-container {
+    height: 100%;
+}
+
+/*센터 영역*/
+.success-center {
+    display: flex;
+    background-color: none; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/*메인 콘텐츠*/
+.success-center p {
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 2%;
+    height: 20px;
+    margin-top: 207px;
+    margin-left: 36px;
+    color: #030303;
+    white-space: nowrap;
+}
+
+.success-center h1 {
+    font-family: 'Pretendard-Bold';
+    font-size: 36px;
+    line-height: 36px;
+    height: 36px;
+    margin-top: 18px;
+    margin-left: 34px;
+    margin-bottom: 435px;
+    color: #030303;
+    white-space: nowrap;
+}
+
+/*버튼*/
+.skip-btn {
+    background: none;
+    color: #545454;
+    border: none;
+    width: 54px;
+    height: 15px;
+    margin-top: 22px;
+    margin-bottom: 36px;
+    margin-left: 168px;
+    font-size: 14px;
+    font-family: 'Pretendard-Regular';
+    text-decoration: underline;
+    cursor: pointer;
+}
