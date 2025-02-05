@@ -45,98 +45,92 @@ export default function OwnerPractice() {
             return;
         }
 
-        setRoomName(""); // 입력 필드 초기화
-        setRoomPrice(""); // 입력 필드 초기화
-
-        // // TODO : 아래 부터 추가된 코드
-        // // firebase에 이미지 업로드 완료시 알림
-        // uploadImg(img).then((url) => {
-        //     alert(
-        //         `룸이 추가되었습니다!
-        //     \n룸명: ${roomName}
-        //     \n시간당 이용 가격: ${roomPrice}원
-        //     \n이미지 Url: ${url}
-        //     `
-        //     );
-        //     console.log(url); // TODO : 삭제할 것
-        //     setRoomName(""); // 입력 필드 초기화
-        //     setRoomPrice(""); // 입력 필드 초기화
-        // });
+        // TODO : 아래 부터 추가된 코드
+        // firebase에 이미지 업로드 완료시 알림
+        uploadImg(img).then((url) => {
+            alert(
+                `룸이 추가되었습니다!
+            \n룸명: ${roomName}
+            \n시간당 이용 가격: ${roomPrice}원
+            \n이미지 Url: ${url}
+            `
+            );
+            console.log(url); // TODO : 삭제할 것
+            setRoomName(""); // 입력 필드 초기화
+            setRoomPrice(""); // 입력 필드 초기화
+        });
     };
 
-    // // firebase에 이미지 저장하는 함수
-    // const uploadImg = (file) => {
-    //     return new Promise((resolve, reject) => {
-    //         try {
-    //             const storage = getStorage(app);
-    //             const fileName = `zic/test/${
-    //                 file.name
-    //             }_${new Date().getTime()}`;
-    //             const storageRef = ref(storage, fileName);
-    //             const uploadTask = uploadBytesResumable(storageRef, file);
+    // firebase에 이미지 저장하는 함수
+    const uploadImg = (file) => {
+        return new Promise((resolve, reject) => {
+            try {
+                const storage = getStorage(app);
+                const fileName = `zic/test/${
+                    file.name
+                }_${new Date().getTime()}`;
+                const storageRef = ref(storage, fileName);
+                const uploadTask = uploadBytesResumable(storageRef, file);
+                uploadTask.on(
+                    "state_changed",
+                    (snapshot) => {
+                        const progress =
+                            (snapshot.bytesTransferred / snapshot.totalBytes) *
+                            100;
+                        console.log(progress);
+                    },
+                    (error) => {
+                        alert("Image Upload Failed");
+                        reject(error);
+                    },
+                    async () => {
+                        try {
+                            const url = await getDownloadURL(
+                                uploadTask.snapshot.ref
+                            );
+                            resolve(url);
+                        } catch (error) {
+                            reject(error);
+                        }
+                    }
+                );
+            } catch (error) {
+                alert("Image Upload Failed");
+                reject(error);
+            }
+        });
+    };
 
-    //             uploadTask.on(
-    //                 "state_changed",
-    //                 (snapshot) => {
-    //                     const progress =
-    //                         (snapshot.bytesTransferred / snapshot.totalBytes) *
-    //                         100;
-    //                     console.log(progress);
-    //                 },
-    //                 (error) => {
-    //                     alert("Image Upload Failed");
-    //                     reject(error);
-    //                 },
-    //                 async () => {
-    //                     try {
-    //                         const url = await getDownloadURL(
-    //                             uploadTask.snapshot.ref
-    //                         );
-    //                         resolve(url);
-    //                     } catch (error) {
-    //                         reject(error);
-    //                     }
-    //                 }
-    //             );
-    //         } catch (error) {
-    //             alert("Image Upload Failed");
-    //             reject(error);
-    //         }
-    //     });
-    // };
+    // input에 이미지를 넣을 경우 미리보기 url을 변경하는 함수
+    const handleImgChange = (e) => {
+        const { name, value } = e.target;
+        setValues((prevValues) => ({
+            ...prevValues,
+            [name]: value,
+        }));
+        if (e.target.name === "imgUrl") {
+            setPreviewImg(e.target.value);
+        }
+    };
 
-    // // input에 이미지를 넣을 경우 미리보기 url을 변경하는 함수
-    // const handleImgChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setValues((prevValues) => ({
-    //         ...prevValues,
-    //         [name]: value,
-    //     }));
+    // 이미지 Drop 시 실행
+    const onDrop = (acceptedFiles) => {
+        const reader = new FileReader();
+        const file = acceptedFiles;
+        if (file) {
+            // 이미지 파일을 읽어 setImg로 저장
+            reader.readAsDataURL(file[0]); // img 파일을 base64로 인코딩
+            setImg(file[0]);
+        }
 
-    //     if (e.target.name === "imgUrl") {
-    //         setPreviewImg(e.target.value);
-    //     }
-    // };
+        reader.onload = (e) => {
+            // onDrop되면 preview 되게 처리, 기존 이미지 url 정보를 공백처리
+            setPreviewImg(reader.result);
+            document.getElementsByName("imgUrl")[0].value = "";
+        };
+    };
 
-    // // 이미지 Drop 시 실행
-    // const onDrop = (acceptedFiles) => {
-    //     const reader = new FileReader();
-    //     const file = acceptedFiles;
-
-    //     if (file) {
-    //         // 이미지 파일을 읽어 setImg로 저장
-    //         reader.readAsDataURL(file[0]); // img 파일을 base64로 인코딩
-    //         setImg(file[0]);
-    //     }
-
-    //     reader.onload = (e) => {
-    //         // onDrop되면 preview 되게 처리, 기존 이미지 url 정보를 공백처리
-    //         setPreviewImg(reader.result);
-    //         document.getElementsByName("imgUrl")[0].value = "";
-    //     };
-    // };
-
-    // const { getRootProps, getInputProps } = useDropzone({ onDrop }); // html 컴포넌트와 연결
+    const { getRootProps, getInputProps } = useDropzone({ onDrop }); // html 컴포넌트와 연결
 
     return (
         <>
@@ -195,7 +189,7 @@ export default function OwnerPractice() {
                 {/* 대여자 연습실 등록 UI */}
                 <div className="add-room-container">
                     {/* TODO : 추가 코드 */}
-                    {/* <div {...getRootProps()}>
+                    <div {...getRootProps()}>
                         <img
                             src={previewImg}
                             alt="Practice Room"
@@ -206,12 +200,7 @@ export default function OwnerPractice() {
                             name="imgUrl"
                             {...getInputProps()}
                         />
-                    </div> */}
-                    <img
-                        src={previewImg}
-                        alt="Practice Room"
-                        className="room-image"
-                    />
+                    </div>
 
                     <div className="add-practice-room-info">
                         <label htmlFor="room-name" className="label">
