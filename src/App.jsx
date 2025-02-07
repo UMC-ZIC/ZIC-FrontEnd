@@ -17,12 +17,12 @@ function App() {
                         <Routes>
                             <Route path="/start" element={<Start />} />
                             <Route path="/categorization" element={<Categorization />} />
-                            <Route path="/user-information" element={<UserInformation />} />
-                            <Route path="/user-success" element={<UserSuccess />} />
-                            <Route path="/owner-information" element={<OwnerInformation />} />
-                            <Route path="/owner-success" element={<OwnerSuccess />} />
+                            <Route path="/user/information" element={<UserInformation />} />
+                            <Route path="/user/success" element={<UserSuccess />} />
+                            <Route path="/owner/information" element={<OwnerInformation />} />
+                            <Route path="/owner/success" element={<OwnerSuccess />} />
                             <Route path="/practice-room" element={<UserPractice />} />
-                            <Route path="/owner-practice-room" element={<OwnerPractice />} />
+                            <Route path="/owner/practice-room" element={<OwnerPractice />} />
                         </Routes>
                     </div>
                 </BrowserRouter>
