@@ -1,0 +1,26 @@
+.calendar {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+  
+/* 네비게이션 헤더 */
+.calendar-header {
+    width: 351px;
+    height: 37px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F2F2F2;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+  
+.calendar-header button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
