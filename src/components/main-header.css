@@ -1,0 +1,33 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 28px;
+    padding-left: 21px;
+    padding-right: 18px;
+    background: #fff;
+}
+  
+.main-header-logo img {
+  width: 54.26px;
+  height: 23.25px;
+}
+  
+.header-button {
+  display: flex;
+  justify-content: right;
+}
+  
+.reservation-details {
+  margin-right: 10px;
+}
+
+.reservation-details img {
+  width: 28px;
+  height: 28px;
+}
+
+.mypage-img img {
+  width: 23px;
+  height: 28px;
+}
