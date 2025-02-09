@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../components/header"; // 공용 header 컴포넌트 가져오기
+import Header from "../../components/signup-header"; // 공용 header 컴포넌트 가져오기
 import NextButton from "../../components/button"; // 공용 button 컴포넌트 가져오기
 import "./owner-information.css";
 import "../../styles/fonts.css";

@@ -1,4 +1,4 @@
-import "./header.css"; 
+import "./signup-header.css"; 
 export default function Header() {
     return (
         <header className="header">

@@ -7,6 +7,8 @@ import OwnerInformation from "./pages/owner/owner-information";
 import OwnerSuccess from "./pages/owner/owner-success";
 import UserPractice from "./pages/user/practice-room";
 import OwnerPractice from "./pages/owner/owner-practice-room";
+import Profit from "./pages/owner/profit";
+
 import './App.css';
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
                 <BrowserRouter>
                     <div className="content-wrap">
                         <Routes>
-                            <Route path="/start" element={<Start />} />
+                            <Route path="/" element={<Start />} />
                             <Route path="/categorization" element={<Categorization />} />
                             <Route path="/user/information" element={<UserInformation />} />
                             <Route path="/user/success" element={<UserSuccess />} />
@@ -23,6 +25,7 @@ function App() {
                             <Route path="/owner/success" element={<OwnerSuccess />} />
                             <Route path="/practice-room" element={<UserPractice />} />
                             <Route path="/owner/practice-room" element={<OwnerPractice />} />
+                            <Route path="/profit" element={<Profit />} />
                         </Routes>
                     </div>
                 </BrowserRouter>
