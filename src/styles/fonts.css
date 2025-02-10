@@ -71,4 +71,10 @@
     font-style: normal;
 }
 
-
+/* // Alongserifbsc */
+@font-face {
+    font-family: 'Alongserifbsc-regular';
+    src: url('/public/alongserifbsc-regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
