@@ -1,0 +1,30 @@
+.filters {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 0 18px 0 21px;
+  background: #fff;
+  font-family: 'Pretendard-Regualr';
+  }
+  
+.filters button {
+  border-color: #dcdcdc;
+  background: #fff;
+  padding: 5px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #545454;
+  font-size: 12px;
+}
+
+.filters .dropdown {
+  display: inline-block;
+}
+
+.filters .dropdown:nth-child(1) {
+  margin-right: 10px;
+}
+
+.filters .dropdown:nth-child(2) {
+  margin-right: 65px;
+}
