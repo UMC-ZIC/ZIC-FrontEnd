@@ -1,0 +1,108 @@
+.date-selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 18px 10px 21px;
+    background: #fff;
+}
+
+.date-selector span {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+  
+/* 월 변경 */
+.month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #f2f2f2;
+    border-radius: 50px;
+    width: 351px;
+    height: 37px;
+}
+  
+.month-navigation button {
+    border: none;
+    padding: 0;
+}
+
+.month-navigation img {
+    width: 25px;
+    height: 25px;
+}
+
+.month-navigation .btn-left {
+    display: flex;
+    margin-right: 100px;
+}
+
+.month-navigation .btn-right {
+    display: flex;
+    margin-left: 100px;
+}
+  
+.month-navigation span {
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-weight: 500;
+}
+  
+/* 날짜 스크롤 */
+.date-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    width: 100%;
+    height: 69px;
+}
+
+.date-scroll::-webkit-scrollbar {
+    display: none; /* chrome에서 스크롤바 숨김*/
+}
+  
+.date-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    padding: 10px;
+    margin: 0 9px 0 9px;
+    cursor: pointer;
+    text-align: center;
+    position: relative; /* 가상요소위치 기준*/
+    transition: background-color 0.2s, color 0.2s;
+}
+  
+.date-item.selected {
+    color: #278cff;
+}
+
+.date-item.selected::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 2px;
+    background-color: #278cff;
+}
+
+.date {
+  font-size: 12px;
+  font-family: 'Pretendard-Regualr';
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.date-number {
+  font-size: 18px;
+  font-family: 'Pretendard-Regualr';
+  font-weight: 500;
+}

@@ -1,0 +1,8 @@
+.banner img {
+    width: 90%;
+    height: auto;
+    margin-right: 18px;
+    margin-left: 21px;
+    text-decoration: none; /*밑줄 제거*/
+    color: inherit; /*부모 요소 색상*/
+  }

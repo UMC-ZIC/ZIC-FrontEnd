@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body::-webkit-scrollbar {
+    display: none; /* chrome에서 스크롤바 숨김*/
+}
+
 .root-layout {
     display: flex;
     justify-content: center;
