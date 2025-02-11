@@ -11,9 +11,9 @@ export default function Categorization() {
 
     const handleNext = () => {
         if (selected === "user") {
-            navigate("/user-information"); // '이용자' 선택 시 user-information 페이지로 이동
+            navigate("/user/information"); // '이용자' 선택 시 user-information 페이지로 이동
         } else if (selected === "owner") {
-            navigate("/owner-information"); // '대여자' 선택 시 owner-information 페이지로 이동
+            navigate("/owner/information"); // '대여자' 선택 시 owner-information 페이지로 이동
         } else {
             alert("가입 목적을 선택해주세요."); // 아무것도 선택하지 않은 경우 경고
         }

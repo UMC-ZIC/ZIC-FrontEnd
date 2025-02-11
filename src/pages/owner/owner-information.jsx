@@ -58,7 +58,7 @@ export default function OwnerInformation() {
             setBusinessError("숫자 10자리를 정확히 입력해주세요");
             return;
         }
-        navigate("/owner-success");
+        navigate("/owner/success");
     };
 
     return (

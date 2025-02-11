@@ -7,7 +7,6 @@ import OwnerInformation from "./pages/owner/owner-information";
 import OwnerSuccess from "./pages/owner/owner-success";
 import UserPractice from "./pages/user/practice-room";
 import OwnerPractice from "./pages/owner/owner-practice-room";
-import Profit from "./pages/owner/profit";
 
 import './App.css';
 import MainPage from "./pages/user/mainpage";
@@ -26,7 +25,6 @@ function App() {
                             <Route path="/owner/success" element={<OwnerSuccess />} />
                             <Route path="/practice-room" element={<UserPractice />} />
                             <Route path="/owner/practice-room" element={<OwnerPractice />} />
-                            <Route path="/profit" element={<Profit />} />
                             <Route path="/user/main" element={<MainPage />} />
                         </Routes>
                     </div>

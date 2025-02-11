@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from '../components/Main-Header';
-import Filters from '../components/Filter';
-import DateSelector from '../components/Main-Dateselector';
-import RoomList from '../components/Main-Room';
-import Banner from '../components/Banner';
-import Footer from '../components/Footer';
-import room1 from '../../public/first_room.png'
-import room2 from '../../public/second_room.png'
-import room3 from '../../public/third_room.png'
-import room4 from '../../public/fourth_room.png'
-import '../App.css';
+import Header from '../../components/main-header';
+import Filters from '../../components/Main-Filter';
+import DateSelector from '../../components/Main-Dateselector';
+import RoomList from '../../components/Main-Room';
+import Banner from '../../components/Main-Banner';
+import Footer from '../../components/Main-Footer';
+import room1 from '../../../public/first_room.png';
+import room2 from '../../../public/second_room.png'
+import room3 from '../../../public/third_room.png'
+import room4 from '../../../public/fourth_room.png'
+import '../../App.css';
 
 function MainPage() {
   const rooms = [

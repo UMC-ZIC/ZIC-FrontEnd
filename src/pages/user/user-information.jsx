@@ -80,7 +80,7 @@ export default function UserInformation() {
 
     const handleNext = () => {
         //여기에서 추가적인 유효성 검사 할 수 있음
-        navigate("/user-success");
+        navigate("/user/success");
     };
 
     return (
